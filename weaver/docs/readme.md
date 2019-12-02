@@ -14,7 +14,7 @@ v0.01 demonstrates the following:
 __Installation__
 
 <figure><p align="center">
-    <img width="85%" src="../../Architecture/images/final/readme_1.png">
+    <img width="85%" src="../../docs/images/final/readme_1.png">
     <br>
     <em>Fig. 1: Message Data Flow</em>
 </figure>
