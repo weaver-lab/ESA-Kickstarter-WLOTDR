@@ -7,5 +7,4 @@ import mesh_config
 config = mesh_config.config
 
 node=meshnode.Mesh()
-payload = node.node_launch(config['id'])
-print(payload)
+node.node_launch(config['id'])
