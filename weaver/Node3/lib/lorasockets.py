@@ -51,7 +51,6 @@ def message_handler(socket,id):
             continue
 
         if not all(keys in msg_chunk for keys in config['key_list']):
-            print("missing key")
             lw.log_wrap_e2()
             continue
 
