@@ -31,23 +31,22 @@ __Installation__
 2. The corresponding software for each node is located in folders /Node1, /Node2 and /Node3.
 
 3. Node 1 requires additional configuration in order to connect to your wlan network.
-  - Once the Node 1 software has been downloaded, open /WeaverMesh/mesh_config.py
-    - The network dictionary will need to be updated for the following:
+  - Once the Node 1 software has been downloaded, open mesh_config.py
+    - The network dictionary will need to be updated with the following:
         - IP
         - Netmask
         - Gateway
         - DNS
         - ssid
         - password
-    - This is required as Node 1 requires an internet connection in order to succesfully complete the GET request from the DataRella T&T server)
+    - This is required as Node 1 needs an internet connection in order to succesfully complete the GET request from the DataRella T&T server)
 
 
-3. Flash each device with the corresponding software. I've done this in Atom. Make sure you only have one project folder open at a time :).
+3. Flash each device with the corresponding software (i.e. Node1, Node2 or Node 3). I've done this in Atom using the pymakr extension. Make sure you only have one project folder open at a time :).
 
 4. Once the devices are succesfully flashed the following should take place:
   1. Node 1 should perform the GET request and pass the signedTx onto Node 2.
   2. Node 2 should received the signedTx from Node 1 and pass it onto Node 3.
-      a. The LED on each device should flash a whiteish color when the message is received.
   3. White/blueish LED lights flashing mean that the node has received its payload
 
 Notes:
