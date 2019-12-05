@@ -8,11 +8,16 @@ from network import WLAN
 import time
 def connect_wlan(conf_dict):
     """connect LoPy to local wlan network. see details in ../mesh_config.py"""
-    wlan = WLAN()
-    wlan.init(mode=WLAN.STA)
-    wlan.ifconfig(config=(conf_dict["ip"],conf_dict["netmask"],conf_dict["gateway"],conf_dict["dns"]))
+    wlan = WLAN(mode=WLAN.STA)
+    # don't use static IP
+    #wlan.init(mode=WLAN.STA)
+    #wlan.ifconfig(config=(conf_dict["ip"],conf_dict["netmask"],conf_dict["gateway"],conf_dict["dns"]))
     if not wlan.isconnected():
+        print("Connecting to Wifi...")
         wlan.connect(conf_dict["ssid"],auth=(WLAN.WPA2, conf_dict["password"]), timeout=5000)
+    while not wlan.isconnected():
+        time.sleep_ms(50)
+    print("connected")
 
 def set_mac(mac_id:int):
     """set mac address for 0 - 255 unique devices for LoPy device"""

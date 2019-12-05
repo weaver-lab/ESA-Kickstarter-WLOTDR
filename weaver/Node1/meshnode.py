@@ -63,6 +63,7 @@ class Mesh():
         response           = urequests.get(self.url)
         payload            = response.content
         dc.led_burst()     #GET request succesful
+        print("Payload: {}".format(payload))
         payload_size       = len(payload)
 
         number_of_messages = (messaging.message_quantity(payload_size,self.payload_max))
