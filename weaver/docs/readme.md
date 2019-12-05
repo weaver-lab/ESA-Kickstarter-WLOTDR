@@ -26,7 +26,7 @@ __Installation__
     - During the "Updating Firmware" steps of the hardware setup, it is recommnded to use the above mentioned firmware.
 
 *WeaverMesh Software Installation*
-1. The software for each node is maintained @ https://github.com/weaver-lab/ESA-Kickstarter-WLOTDR
+1. The software for each node is maintained @ https://github.com/weaver-lab/ESA-Kickstarter-WLOTDR/tree/master/weaver
 
 2. The corresponding software for each node is located in folders /Node1, /Node2 and /Node3.
 
