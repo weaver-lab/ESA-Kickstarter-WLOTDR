@@ -81,6 +81,7 @@ class Mesh():
             self.s_x.setblocking(True)
             recv_mesg = ls.message_handler(self.s_x,self.id)
             dc.led_burst()
+            print("Received: {}".format(recv_mesg))
 
             self.s_x.setblocking(False)
             payload            = messaging.payload_rebuild(recv_mesg)

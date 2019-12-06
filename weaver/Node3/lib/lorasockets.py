@@ -45,13 +45,14 @@ def message_handler(socket,id):
     message_recv_dict={}
     while True:
         msg_chunk = recv_data(socket,id)
+        print("Data received: {}".format(msg_chunk))
 
         if msg_chunk is None:
-            lw.log_wrap_e1()
+            #lw.log_wrap_e1()
             continue
 
         if not all(keys in msg_chunk for keys in config['key_list']):
-            lw.log_wrap_e2()
+            #lw.log_wrap_e2()
             continue
 
         num_of_msgs = int(msg_chunk['num_of_msgs'])

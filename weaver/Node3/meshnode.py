@@ -38,6 +38,7 @@ class Mesh():
             #should disable wlan
 
         if self.id == '3':
+            dc.connect_wlan(config["network"]) # for Globalstar simulation
             dc.kill_heartbeat()
             self.s_x       = ls.create_socket(True)
             self.recipient = None
@@ -97,10 +98,14 @@ class Mesh():
         """node 3 listens for messages from node 2. upon receipt of the set of messages"""
         """node 3 passes the message to main.py where the ororatech simplex terminal can take it"""
         """node 3 listents"""
+        time.sleep(5) #required for network interface to boot
         while True:
             recv_mesg      = ls.message_handler(self.s_x,self.id)
-            payload        = messaging.payload_rebuild(recv_mesg)
-            payload        = json.loads(payload)
-            dc.led_burst()
-            lw.log_wrap_s1(payload,time.localtime())
-            return payload
+            print(recv_mesg)
+            if recv_mesg is not None:
+                break
+        payload        = messaging.payload_rebuild(recv_mesg)
+        payload        = json.loads(payload)
+        dc.led_burst()
+        #lw.log_wrap_s1(payload,time.localtime())
+        return payload
