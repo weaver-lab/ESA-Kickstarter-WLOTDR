@@ -44,3 +44,6 @@ def led_burst():
     pycom.rgbled(0x0e355c)
     time.sleep(3)
     pycom.rgbled(0x000000)
+
+def led_color(color):
+    pycom.rgbled(color)

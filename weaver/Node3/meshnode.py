@@ -38,7 +38,7 @@ class Mesh():
             #should disable wlan
 
         if self.id == '3':
-            dc.connect_wlan(config["network"]) # for Globalstar simulation
+            #dc.connect_wlan(config["network"]) # for Globalstar simulation
             dc.kill_heartbeat()
             self.s_x       = ls.create_socket(True)
             self.recipient = None
@@ -101,7 +101,7 @@ class Mesh():
         time.sleep(5) #required for network interface to boot
         while True:
             recv_mesg      = ls.message_handler(self.s_x,self.id)
-            print(recv_mesg)
+            #print(recv_mesg)
             if recv_mesg is not None:
                 break
         payload        = messaging.payload_rebuild(recv_mesg)
